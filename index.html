@@ -22,7 +22,6 @@
       </header>
       <main class="content">
         <section class="profile page__section">
-          <!-- Аватар: убраны предустановленные значения, загружается с сервера -->
           <div class="profile__image"></div>
           <div class="profile__info">
             <h1 class="profile__title"></h1>
@@ -39,7 +38,7 @@
         <p class="footer__copyright">© 2025 Mesto Russia</p>
       </footer>
 
-      <!-- Попап редактирования профиля -->
+      <!-- Попап редактирования  профиля -->
       <div class="popup popup_type_edit">
         <div class="popup__content">
           <button type="button" class="popup__close"></button>
@@ -163,14 +162,47 @@
           </form>
         </div>
       </div>
+
+      <!-- === НОВЫЕ ПОПАПЫ ПО ЗАДАНИЮ === -->
+
+      <!-- Попап статистики карточки -->
+      <div class="popup popup_type_card-stats">
+        <div class="popup__content">
+          <button type="button" class="popup__close"></button>
+          <h3 class="popup__title">Статистика места</h3>
+          <div class="popup__stats">
+            <p><strong>Название:</strong> <span id="card-stats-name"></span></p>
+            <p><strong>Автор:</strong> <span id="card-stats-owner"></span></p>
+            <p><strong>Дата создания:</strong> <span id="card-stats-date"></span></p>
+            <p><strong>Лайков:</strong> <span id="card-stats-likes"></span></p>
+            <p><strong>Лайкнули:</strong></p>
+            <ul id="card-stats-liked-by" class="popup__list"></ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Попап статистики пользователя (по клику на логотип) -->
+      <div class="popup popup_type_user-stats">
+        <div class="popup__content">
+          <button type="button" class="popup__close"></button>
+          <h3 class="popup__title">Статистика профиля</h3>
+          <div class="popup__stats">
+            <p><strong>Имя:</strong> <span id="user-stats-name"></span></p>
+            <p><strong>О себе:</strong> <span id="user-stats-about"></span></p>
+            <p><strong>Карточек добавлено:</strong> <span id="user-stats-cards"></span></p>
+          </div>
+        </div>
+      </div>
+
     </div>
 
 
-    <!-- Шаблон карточки: раскомментирован счётчик лайков -->
+    <!-- Шаблон карточки -->
     <template id="card-template">
       <li class="places__item card">
         <img class="card__image" src="" alt="" />
         <div class="card__control">
+          <button type="button" class="card__control-button card__control-button_type_info">i</button>
           <button type="button" class="card__control-button card__control-button_type_delete"></button>
         </div>
         <div class="card__description">
